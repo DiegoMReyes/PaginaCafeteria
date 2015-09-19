@@ -1,3 +1,4 @@
+
  
 <!DOCTYPE HTML>
 <html>
@@ -21,6 +22,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <script src="js/bootstrap.min.js"></script>
+
+<script "js/jquery-1.11.3.js"></script>
+
+ 
+
 </head>
 
 
@@ -33,25 +39,71 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
   <h2 class="form-heading">Ingresar</h2>
   <div class="app-cam">
-	  <form method ='POST'  action= 'login.php'>
+	  
 
-        		<input type="text" name='usuario' placeholder="Usuario" required/>
-              <input type="password" name='password' placeholder="Contraseña " required/>
+        		<input type="text" id="usuario" name='usuario' placeholder="Usuario" required/>
+              	<input type="password" id="password" name='password' placeholder="Contraseña " required/>
               
-        		<div class="submit"><input type="submit" onClick="myFunction()" value="Login"></div>
+        		<div class="submit" id="enviar"><input type="submit" name="enviar" value="Login"></div>
         		<div class="login-social-link">
 
 
-                      <a href="register.html" class="facebook" >
+                      <a href="register.php" class="facebook" >
                           Registrate Pulsando Aqui 
                       </a>
 
                   
                  </div>
         		<ul class="new">
-			
-	</form>
+ 
   </div>
+
+
+
+<form method="POST">
+  <div id="resultado"></div>
+</form> 
+
+
+    <script > 
+
+
+      		$(".submit").click(function() {
+            var usuario = $("#usuario").val();
+            var password = $("#password").val();
+            $.ajax({
+              method: "POST",
+              url: "ingreso.php",
+              data: { usuario: usuario , password:password}
+            })
+
+            .done(function( msg ) {
+               $("#resultado").html(msg);
+ 
+            });
+  
+
+
+          });
+
+ 
+  </script>
+ 
+
+   <?php 
+
+    if(isset($_POST['resultado'])  == 1 )  {
+
+     
+
+
+    }
+
+
+    ?>
+ 
+
+ 
 
 
 </body>
