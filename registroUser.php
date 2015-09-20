@@ -14,6 +14,14 @@
 	$confirm= $_POST['c2'];
 
 
+echo $name. $apell. $tipo. $number. $genero . $user . $password .$confirm   ;
+
+
+//if( $name != "" && $apell != "" $tipo != "" && $number != "" && $genero != "" $user != "" && $password != "" && $confirm != ""  ){
+
+
+ 
+
 	if($password == $confirm){
  
 		include('conexion.php');
@@ -55,11 +63,20 @@
 
 
 	}else{ 
+
+		echo "<script> alert('Las contraseñas no coinciden'); </script>";
+
+
  
 
 	}	
 
 
-	echo "<script> alert('ole'); </script>";
+
+
+//}else { echo "<script> alert('Datos incompletos por favor completar'); </script>"; }
+
+
+	
 
  ?>

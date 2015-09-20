@@ -25,6 +25,10 @@
 
 
 <body id="login">
+
+<div id="resultado"></div>
+
+
   <div  "login-logo">
      <br><br><br><h1 align="center">  Cafeteria  </h1>
   </div>
@@ -50,12 +54,12 @@
 
       <input type="text" name="numero" id="numero" class="form-control1" placeholder="Numero de Documento" required autofocus="">
       
-      <div class="genero"   required>
+      <div class="genero"  required>
         <label for="masculino"  class="label_radio">
-            <input type="radio" value="Masculino" name="genero" required> Masculino
+            <input type="radio" id="genero" value="Masculino" name="genero" required> Masculino
         </label>
-        <label for="femenino" class="label_radio">
-            <input type="radio" value="Femenino" name="genero"  required> Femenimo
+        <label for="femenino"  class="label_radio">
+            <input type="radio" id="genero" value="Femenino" name="genero"  required> Femenimo
         </label>
 	  </div>
 
@@ -63,8 +67,8 @@
 
     	  <h4> Introduzca los datos de su cuenta a continuación</h4>
       <input type="text" name="user" class="form-control1" id="usuario" placeholder="Nombre de Usuario" required autofocus="">
-      <input type="password" class="form-control1" id="password" name="c1" placeholder="Contraseña" required >
-      <input type="password" class="form-control1" name="c2" placeholder="Confirmar contraseña" required>
+      <input type="password" class="form-control1" id="c1" name="c1" placeholder="Contraseña" required >
+      <input type="password" class="form-control1" id="c2" name="c2" placeholder="Confirmar contraseña" required>
       <label class="checkbox-custom check-success">
          <label for="checkbox1">
          <input type="checkbox" value="" id="checkbox1" required> Estoy de acuerdo con los Términos de Servicio y Política de Privacidad</label> 
@@ -77,7 +81,7 @@
           </a>
       </div>
 
-      <div id="resultado"></div>
+      
       
 
   </div>
@@ -94,17 +98,21 @@
                           var apellido = $("#apellido").val();
                           var tipo = $("#tipo").val();
                           var numero = $("#numero").val();
+                          var genero = $("#genero").val();
 
                           var usuario = $("#usuario").val();
-                          var password = $("#password").val();
+                          var c1 = $("#c1").val();
+                          var c2 = $("#c2").val();
+
+
                           $.ajax({
                             method: "POST",
                             url: "registroUser.php",
                             data: {
                              nombre:nombre , apellido: apellido,
-                             tipo: tipo,
-
-                             usuario: usuario , password:password}
+                             tipo: tipo, numero: numero,
+                             genero: genero,
+                             usuario: usuario , c1:c1 , c2:c2}
                           })
 
                           .done(function( msg ) {
