@@ -36,6 +36,12 @@
   <h2 class="form-heading">Registrar</h2>
   <div class="form-signin app-cam" >
       <p>Ingrese sus datos personales</p>
+
+
+      <form  method="POST" >
+
+
+
       <input type="text" class="form-control1" name="nombre" id="nombre" placeholder="Nombres" required autofocus="">
       <input type="text" class="form-control1" name="apellido" id="apellido" placeholder="Apellidos" required autofocus="">
       
@@ -71,7 +77,7 @@
       <input type="password" class="form-control1" id="c2" name="c2" placeholder="Confirmar contraseña" required>
       <label class="checkbox-custom check-success">
          <label for="checkbox1">
-         <input type="checkbox" value="" id="checkbox1" required> Estoy de acuerdo con los Términos de Servicio y Política de Privacidad</label> 
+         <input type="checkbox" value="yes" id="checkbox1" name="yes" required> Estoy de acuerdo con los Términos de Servicio y Política de Privacidad</label> 
       </label>
       <div id="enviar" ><button class="btn btn-lg btn-success1 btn-block" name ='boton' type="submit" onclick="ConfirmDelete()">Enviar Datos</button></div>
       <div class="registration">
@@ -81,10 +87,20 @@
           </a>
       </div>
 
-      
+      </form>
       
 
   </div>
+
+
+  <?php  
+
+        if(isset($_REQUEST["boton"])){ 
+
+
+  ?>
+
+
  
              <script >
 
@@ -98,11 +114,13 @@
                           var apellido = $("#apellido").val();
                           var tipo = $("#tipo").val();
                           var numero = $("#numero").val();
-                          var genero = $("#genero").val();
+                          var genero = $('input:radio[name=genero]:checked').val();
 
                           var usuario = $("#usuario").val();
                           var c1 = $("#c1").val();
                           var c2 = $("#c2").val();
+
+                          var yes = $('input:checkbox[name=yes]:checked').val();
 
 
                           $.ajax({
@@ -112,7 +130,7 @@
                              nombre:nombre , apellido: apellido,
                              tipo: tipo, numero: numero,
                              genero: genero,
-                             usuario: usuario , c1:c1 , c2:c2}
+                             usuario: usuario , c1:c1 , c2:c2  , yes:yes  }
                           })
 
                           .done(function( msg ) {
@@ -127,6 +145,12 @@
 
              </script>
     
+
+
+<?php } ?>
+
+
+
 </body>
 
 

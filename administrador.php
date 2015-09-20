@@ -45,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Bienvenido Administrador</a>
+                <a class="navbar-brand" href="administrador.php">Bienvenido Administrador</a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-nav navbar-right">
@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Inicio</a>
+                            <a href="administrador.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Inicio</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-laptop nav_icon"></i>Productos<span class="fa arrow"></span></a>
@@ -120,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fa fa-table nav_icon"></i>Usuarios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="basic_tables.php">Listar Estudiantes</a>
+                                    <a href="Usuarios.php">Listar Estudiantes</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
