@@ -1,5 +1,4 @@
-
-
+ 
 <?php 
 
 
@@ -12,14 +11,14 @@
 
 					$conecte = mysql_connect( "localhost" , "diego" , "diego" );
 
-					mysql_select_db('Cafeteria' , $conecte);
+					mysql_select_db('cafeteria' , $conecte);
 
 
 					if($num == 1){
 
 					$resultado = mysql_query($sql);
 
-				    }else{mysql_query($sql);}
+				    }else{mysql_query($sql);   }
 
 		}
 

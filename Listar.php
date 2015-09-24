@@ -1,3 +1,4 @@
+
 <?php 
 
     session_start();
@@ -9,16 +10,15 @@
     if(@$idUser > 0){ 
 
 
- ?>     
+ ?>
 
 
 
 
-
- <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
-<title>Inicio</title>
+<title>Modern an Admin Panel Category Flat Bootstarp Resposive Website Template | Basic_tables :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -28,26 +28,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<!-- Graph CSS -->
-<link href="css/lines.css" rel='stylesheet' type='text/css' />
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
 <!----webfonts--->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 <!---//webfonts--->  
-<!-- Nav CSS -->
-<link href="css/custom.css" rel="stylesheet">
-<!-- Metis Menu Plugin JavaScript -->
-<script src="js/metisMenu.min.js"></script>
-<script src="js/custom.js"></script>
-<!-- Graph JavaScript -->
-<script src="js/d3.v3.js"></script>
-<script src="js/rickshaw.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
-     <!-- Navigation -->
+         <!-- Navigation -->
         <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -56,32 +48,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="usuario.php">Bienvenido</a>
+                <a class="navbar-brand" href="Listar.php">Lista de Productos</a>
             </div>
-             
+            <!-- /.navbar-header -->
             <ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-	        		
-	        		
-	      		</li>
+				
 			    <li class="dropdown">
-	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png"><span class="badge"></span></a>
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png" alt=""/><span class="badge"></span></a>
 	        		<ul class="dropdown-menu">
-						<li class="dropdown-menu-header text-center">
-							<strong>Cuenta</strong>
-						</li>
-						<?php  echo '  <li class="m_2" id="actualizar" value="'.$idUser.'"><a href="#" ><i class="fa fa-bell-o"></i> Actualizar <span class="label label-info"></span></a></li> '; ?>
-						<li class="m_2"><a href="comentariosUser.php"><i class="fa fa-envelope-o"></i> Nuevo Comentario <span class="label label-success"></span></a></li>
-						<li class="m_2"><a href="respuestas.php"><i class="fa fa-tasks"></i> Respuestas <span class="label label-danger"></span></a></li>
+						 
 						 
 						<li class="divider"></li>
-						<li class="m_2"><a href="salir.php"><i class="fa fa-lock"></i>Salir</a></li>	
+						
+						<li class="m_2"><a href="salir.php"><i class="fa fa-lock"></i> Salir</a></li>	
 	        		</ul>
 	      		</li>
 			</ul>
-			<span class="navbar-form navbar-right">
-               <div id="buscar"><input type="text" class="form-control" id="busca" value="Buscar Producto..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Buscar Producto..';}"></div>
-            </span>
+			<form class="navbar-form navbar-right">
+            </form>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -94,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li>
                                     <a href="listar.php">Listar Productos</a>
                                 </li>
-								 
+								
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -105,14 +89,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li>
                                     <a href="comentariosUser.php">Comentarios</a>
                                 </li>
-                                <li>
-                                    <a href="respuestas.php">Respuestas</a>
-                                </li>
+								<li>
+									<a href="respuestas.php">Respuestas</a>
+								</li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
- 
-
+                         
                         
                     </ul>
                 </div>
@@ -121,79 +105,77 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- /.navbar-static-side -->
         </nav>
         <div id="page-wrapper">
-        <div class="graphs"></div>
+        <div class="col-md-12 graphs">
+	   <div class="xs">
+  	 <h3>Productos de la Cafeteria</h3>
+  	 <div class="panel-body1">
+   <table class="table">
+     <thead>
+        <tr>
+          <th>#</th>
+          
+          <th>Nombre del Producto</th>
+          <th>DNI</th>
+          <th>Codigo</th>
+		  <th>Tipo de Producto</th>
+		  <th>Valor del Producto</th>
+       
+      <th></th>
+      <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
 
-        <div class="xs">
-     <div class="panel-body1">
-
-     <div id="resultado">
+       require_once("conexion.php");
          
+        $sql = "SELECT * FROM Producto WHERE Estado ='Activo' ";
+ 
 
-     </div>
+        $con = new conexion();
+ 
+        $con->conecta($sql, 1);
+  
+        $contador = 1;
 
+        while($fila = mysql_fetch_array($resultado)){
 
-     </div>
+          echo "
+            <tr>
+            <td>".$contador."</td>
+             
+             <td>".$fila['Nombre']."</td>
+             <td>".$fila['DNI']."</td> 
+             <td>".$fila['Codigo']."</td> 
+             <td>".$fila['Tipo']."</td> 
+             <td>".$fila['Valor']."</td> 
+               
+              </tr>
+          ";
 
-     </div>
+        }
 
-
-       </div>
+        ?> 
+       
+         
+      </tbody>
+    </table>
+    </div>
+     <div class="bs-example4" data-example-id="simple-responsive-table">
+       <!-- /.table-responsive -->
+       <!-- /.table-responsive -->
+</div>
+  </div>
+        </div>
+        </div>
       <!-- /#page-wrapper -->
    </div>
     <!-- /#wrapper -->
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-
-
-    <script >
-
-
-    $("#buscar").change(function() {
- 
-
-            var busca = $("#busca").val();
-            $.ajax({
-                method: "POST",
-                url: "Buscar.php",
-                data: { busca:busca}
-            })
-
-            .done(function( msg ) {
-                $("#resultado").html(msg);
-            });
-
-    });
-
-
-    $("#actualizar").click(function() {
- 
-
-            var user = $("#actualizar").val();
-            $.ajax({
-                method: "POST",
-                url: "ActualizarUsuario.php",
-                data: { user:user}
-            })
-
-            .done(function( msg ) {
-                $("#resultado").html(msg);
-            });
-
-    });
-
-
-
-    </script>
-
-
-
-
-
-
-
-
-
+<!-- Nav CSS -->
+<link href="css/custom.css" rel="stylesheet">
+<!-- Metis Menu Plugin JavaScript -->
+<script src="js/metisMenu.min.js"></script>
+<script src="js/custom.js"></script>
 </body>
 </html>
 

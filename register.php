@@ -18,8 +18,7 @@
               <script src="js/jquery.min.js"></script>
                
               <script src="js/bootstrap.min.js"></script>
-
-              <script src="js/programador.js"></script>
+ 
 
 </head>
 
@@ -92,13 +91,7 @@
 
   </div>
 
-
-  <?php  
-
-        if(isset($_REQUEST["boton"])){ 
-
-
-  ?>
+ 
 
 
  
@@ -144,11 +137,7 @@
 
 
              </script>
-    
-
-
-<?php } ?>
-
+ 
 
 
 </body>

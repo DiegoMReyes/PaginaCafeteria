@@ -23,11 +23,20 @@
 
 			$userB = $fila['User'];
 			$passB = $fila['Password'];
+			$idAdministrador = $fila['idAdministrador'];
 
 
-			if($user != "" || $password != ""){ 
+			if($user != "" && $password != ""){ 
 
 						if($user == $userB && $password == $passB ){
+
+
+							session_start();
+
+
+							$_SESSION['idAdministrador'] = $idAdministrador ;
+
+
 
 							 $voyA = "  <script>  alert('Bienvenido' ); </script>
 
@@ -84,6 +93,16 @@
 			if($user != "" || $password != ""){ 
 
 						if($user == $userB && $password == $passB ){
+
+
+							$idUsuario = $fila['idUsuario'];
+
+
+							session_start();
+
+							$_SESSION['idUsuario'] = $idUsuario;
+
+
 
 							 $voyA = "  <script>  alert('Bienvenido' ); </script>
 

@@ -1,21 +1,7 @@
-<?php 
-
-    session_start();
-
-
-    @$idAdm = @$_SESSION['idAdministrador'];
-
-
-    if(@$idAdm > 0){ 
-
-
- ?>
-
-
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Usuarios</title>
+<title>Actualizar Producto</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
@@ -45,31 +31,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Usuarios.php">Usuarios</a>
+                <a class="navbar-brand" href="index.html">Registrar Estudiante</a>
             </div>
             <!-- /.navbar-header -->
-     <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-              
-              
-            </li>
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png"><span class="badge"></span></a>
-              <ul class="dropdown-menu">
-            <li class="dropdown-menu-header text-center">
-              <strong>Cuenta</strong>
-            </li>
-              
-            <li class="m_2"><a href="salir.php"><i class="fa fa-lock"></i>Salir</a></li>  
-              </ul>
-            </li>
-      </ul>
-       
+            <ul class="nav navbar-nav navbar-right">
+				
+			    <li class="dropdown">
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png" alt=""/><span class="badge"></span></a>
+	        		<ul class="dropdown-menu">
+						<li class="dropdown-menu-header text-center">
+							<strong>Cuenta</strong>						</li>
+						<li class="m_2"><a href="#"><i class="fa fa-bell-o"></i> Actualizar <span class="label label-info"></span></a></li>
+						<li class="m_2"><a href="#"><i class="fa fa-envelope-o"></i> Mensajes <span class="label label-success"></span></a></li>
+						<li class="m_2"><a href="#"><i class="fa fa-tasks"></i> Respuestas <span class="label label-danger"></span></a></li>
+						<li><a href="#"><i class="fa fa-comments"></i> Comentarios <span class="label label-warning"></span></a></li>
+						<li class="dropdown-menu-header text-center">
+							<strong>Ajustes</strong>						</li>
+						<li class="m_2"><a href="#"><i class="fa fa-user"></i> Perfil</a></li>
+						<li class="m_2"><a href="#"><i class="fa fa-wrench"></i> Configurar</a></li>
+						
+						<li class="divider"></li>
+						
+						<li class="m_2"><a href="#"><i class="fa fa-lock"></i> Salir</a></li>	
+	        		</ul>
+	      		</li>
+			</ul>
+			<form class="navbar-form navbar-right">
+              <input type="text" class="form-control" value="Buscar Producto.." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Buscar Producto..';}">
+            </form>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="administrador.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Inicio</a>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw nav_icon"></i>Inicio</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-laptop nav_icon"></i>Productos<span class="fa arrow"></span></a>
@@ -77,10 +71,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li>
                                     <a href="listarProducto.php">Listar Productos</a>
                                 </li>
-                <li>
+								<li>
                                     <a href="newProducto.html">Nuevo Producto</a>
                                 </li>
-                          </ul>
+								<li>
+                                    <a href="">Eliminar Productos</a>
+                                </li>
+								
+                            </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         
@@ -90,9 +88,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li>
                                     <a href="inbox.html">Comentarios</a>
                                 </li>
-                <li>
-                  <a href="">Solicitudes</a>
-                </li>
+								<li>
+									<a href="">Solicitudes</a>
+								</li>
                                 
                             </ul>
                             <!-- /.nav-second-level -->
@@ -103,11 +101,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="#"><i class="fa fa-table nav_icon"></i>Usuarios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="Usuarios.php">Listar Usuarios</a>
+                                    <a href="basic_tables.html">Listar Usuarios</a>
                                 </li>
+
                             </ul>
-                            <li>
-                            <a href=""><i class="fa fa-flask nav_icon"></i>Inventario<span class="fa arrow"></span></a>
+                            <a href=""><i class="fa fa-flask nav_icon"></i>Inventario</a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="Inventario.php">Registrar Ventas</a>
@@ -128,188 +126,100 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- /.navbar-static-side -->
         </nav>
         <div id="page-wrapper">
-
-
- <div class="col-md-12 graphs">
+        <div class="col-md-12 graphs">
 	   <div class="xs">
-  	 <h3>Usuarios</h3>
-  	<div class="bs-example4" data-example-id="contextual-table">
-    <table class="table">
-      <thead>
+  	 <h3>Productos Registrados</h3>
+  	 <div class="panel-body1">
+  	 
+   <table class="table">
+     <thead>
         <tr>
           <th>#</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Usuario</th>
-          <th>No. Documento</th>
-          <th>Elminar</th>
-        </tr>
+          
+          <th>Nombre del Producto</th>
+          <th>DNI</th>
+          <th>Codigo</th>
+		  <th>Tipo de Producto</th>
+		  <th>Valor del Producto</th>
+      </tr>
       </thead>
-
-
-	<tbody>
-
-
-      <?php  
-
-      
-
-       
-
-      include('conexion.php');
-
-
-      $sql = "SELECT * FROM Usuario WHERE Estado='Activo' ";
-
-     $cone = new conexion();
-
-		$cone->conecta($sql, 1);
-
-    $class = 0; $numeropl = 0;
-
-    $d = 0;
- 
-    $arrayids = array();
-
-
-    
-    function  tabla(){ 
-
-      Global $fila , $resultado , $numeropl, $class;
-
-      Global $nombre , $apellido, $user, $id , $d , $arrayids;
-
-
-
-
-      while ($fila = mysql_fetch_array($resultado)){
-
-            	$nombre = $fila['Nombre'];
-            	$apellido = $fila['Apellido'];
-            	$user = $fila['User'];
-              $id = $fila['idUsuario'];
-
-              $d = $fila['numeroDocumento'];
-
-
-               $numeropl++;
-
-              $arrayids[$numeropl] = $id;
- 
- 
-
-              switch ($class) {
-                case 0: fila("active") ; $class = 1 ; break;
-                case 1: fila(""); $class = 2 ; break;
-                case 2: fila("success"); $class = 3 ; break;
-                case 3: fila(""); $class = 4 ; break;
-                case 4: fila("info"); $class = 5 ; break;
-                case 5: fila(""); $class = 6 ; break;
-                case 6: fila("warning"); $class = 7 ; break;
-                case 7: fila(""); $class = 8 ; break;
-                case 8: fila("danger"); $class = 9 ; break;
-                case 9: fila(""); $class = 0 ; break;
-                default:  fila(""); break;
-              }
-
-
-              
-
- 
-      }
-
-
-    }
-
-      function  fila($class){
-
-          Global $nombre , $apellido, $user, $d ;
-          Global $numeropl;
-
-          Global $id;
-
-            echo'
-
-                  <tr class="'.$class.'">
-                    <th scope="row">'.$numeropl.'</th>
-                    <td> '.$nombre.' </td>
-                    <td>  '.$apellido.'  </td>
-                    <td>  '.$user.'  </td>
-                    <td>  '.$d .'  </td>
-                    <td> <a href="tablesEl.php?red='.$id.'" ><img  width="40px" height="40px" src="images/Eliminar.jpg"  /></a> </td>
-                  </tr>
-
-
-
-
-
-              '; 
-
-
-      }
-
-
-      tabla();
-
-        
-
-
- 
-      ?>
-    
-      
-
-      </tbody>
-    </table>
-
-
-      <form action="#" method="POST"  >
-
-       <label>Que usuario desea eliminar</label>
-
-          <input type="number" name="number" value="num" min="1"  <?php Global $numeropl;  echo 'max="'.$numeropl.'"' ;   ?>  required/>
-          <input type="submit" name='envio' value='Eliminar' /> 
-
-      </form>
-
-
-
+      <tbody>
       <?php 
 
+      if(!empty($_GET['idProducto'])){
+        
+        $idProducto = $_GET['idProducto'];
 
-      if(isset($_POST['envio'])){
+        require_once("conexion.php");
+         
+        $sql = "SELECT * FROM Producto WHERE idProducto= '".$idProducto."' ;";
+ 
 
-           $idd =  $_POST['number'];
+        $con = new conexion();
+ 
+        $con->conecta($sql, 1);
+  
+        $contador = 1;
 
+        while($fila = mysql_fetch_array($resultado)){
 
+          $Nombre = $fila['Nombre'];
+          $DNI = $fila['DNI'];
+          $Codigo = $fila['Codigo'];
+          $Tipo = $fila['Tipo'];
+          $Valor = $fila['Valor'];
 
-           Global $arrayids;
+          echo "
+             <tr>
+             <td>".$contador."</td>
+             <td>".$Nombre."</td>
+             <td>".$DNI."</td> 
+             <td>".$Codigo."</td> 
+             <td>".$Tipo."</td> 
+             <td>".$Valor."</td> 
+             </tr>
+          ";
 
-           $red = $arrayids[$idd] ;
+          $contador++;
 
+        }
+        
+      }else{
 
-          echo "  <meta http-equiv='REFRESH' content='0; url= tablesEl.php?red=".$red."' > 
-          <script>  alert('Eliminado correctamente'); </script> "
-
-
-          ;
-
+        echo "<h5>Por favor busque un producto para actualizarlo</h5>";
 
       }
 
+      ?>
+      <h3>Datos del producto a actualizar</h3>
 
-
-
-
-       ?>
-
-
-
+       
+        
+      </tbody>
+    </table>
+    </div>
+     <div class="bs-example4" data-example-id="simple-responsive-table">
+       <!-- /.table-responsive -->
+       <!-- /.table-responsive -->
 </div>
-   
+  </div>
+  <form action="updateProducto.php" method="POST">
+      <div class="form-group has-success">
+        <label class="control-label" for="inputSuccess1">Input with success</label>
+        <?php  echo '<input type="text" class="form-control1" id="inputSuccess1" name="Nombre" value='.$Nombre.'>'; ?>
+        <?php  echo '<input type="text" class="form-control1" id="inputSuccess1" name="DNI" value='.$DNI.'>'; ?>
+        <?php  echo '<input type="text" class="form-control1" id="inputSuccess1" name="Codigo" value='.$Codigo.'>'; ?>
+        <?php  echo '<input type="text" class="form-control1" id="inputSuccess1" name="Tipo" value='.$Tipo.'>'; ?>
+        <?php  echo '<input type="text" class="form-control1" id="inputSuccess1" name="Valor" value='.$Valor.'>'; ?>
+        <?php  echo '<input type="hidden" name="idProducto" value='.$idProducto.'>'; ?>
+        <input class="btn-success btn" type="Submit" value="Click Para Actualizar">
+        
 
-   </div>
       </div>
+    </form>
+
+        </div>
+        </div>
       <!-- /#page-wrapper -->
    </div>
     <!-- /#wrapper -->
@@ -320,21 +230,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/custom.js"></script>
 </body>
 </html>
- 
-
- 
-<?php 
-
-
-}else{
- 
-
-
-        echo"
-
-<meta http-equiv='REFRESH' content='0; url= error404.php' >"; 
-
-
-}
-
-?>
